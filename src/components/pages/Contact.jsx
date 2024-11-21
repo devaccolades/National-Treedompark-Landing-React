@@ -33,7 +33,7 @@ const Contact = forwardRef((props, ref) => {
         if (validateForm()) {
             setLoading(true);
             try {
-                const response = await fetch('https://aspireindiaads.in/nandilath-g-mobiles/php/Thankyou.php', {
+                const response = await fetch('https://treedompark.nationalbuilders.in/ads/Thankyou.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
