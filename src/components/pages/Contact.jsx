@@ -33,20 +33,26 @@ const Contact = forwardRef((props, ref) => {
         if (validateForm()) {
             setLoading(true);
             try {
+                const formData = new URLSearchParams();
+                formData.append('name', form.name);
+                formData.append('phone', form.phone);
+    
                 const response = await fetch('https://treedompark.nationalbuilders.in/ads/Thankyou.php', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/x-www-form-urlencoded', 
                     },
-                    body: JSON.stringify(form),
+                    body: formData.toString(), 
                 });
+    
                 const result = await response.json();
                 setLoading(false);
+    
                 if (result.result === 'success') {
                     alert('Form submitted successfully!');
                     setForm({ name: "", phone: "" });
                 } else {
-                    alert('Something went wrong. Please try again.');
+                    alert(result.message || 'Something went wrong. Please try again.');
                 }
             } catch (error) {
                 setLoading(false);
@@ -55,6 +61,7 @@ const Contact = forwardRef((props, ref) => {
             }
         }
     };
+    
 
     const handleChange = (e) => {
         const { name, value } = e.target;
