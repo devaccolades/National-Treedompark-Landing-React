@@ -130,7 +130,7 @@ const Contact = forwardRef((props, ref) => {
                         <button
                             disabled={loading}
                             type="submit"
-                            className="w-full bg-[#2b2d42] text-white py-[10px] px-[20px] rounded-[10px] mt-[16px] lg:mt-[30px] font-inter-medium text-[14px] lg:text-[16px] cursor-pointer"
+                            className="w-full bg-[#d90429] text-white py-[10px] px-[20px] rounded-[10px] mt-[16px] lg:mt-[30px] font-inter-medium text-[14px] lg:text-[16px] cursor-pointer"
                         >
                             {loading ? 'Submitting...' : 'Submit Here'}
                         </button>

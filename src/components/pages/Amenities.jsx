@@ -60,12 +60,16 @@ const Amenities = forwardRef((props, ref) => {
                             slidesPerView: 4,
                             spaceBetween: 0,
                         },
+                        1600: {
+                            slidesPerView: 5,
+                            spaceBetween: 0,
+                        },
                     }}
                 >
                     {aminityData.map((item, index) => (
                         <SwiperSlide key={index}>
-                            <div>
-                                <Image src={item?.image} alt={item?.title} />
+                            <div className='amenity-image'>
+                                <Image src={item?.image} alt={item?.title} className=''/>
                                 <p className='w-full font-inter-medium text-white text-[14px] lg:text-[16px] py-[10px] text-center border bg-[#2b2d42] -mt-[6px] rounded-b-[10px]'>{item?.title}</p>
                             </div>
                         </SwiperSlide>

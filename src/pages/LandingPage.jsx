@@ -1,13 +1,7 @@
 import React, { useRef } from 'react'
 import { Headder } from '../layout/Headder'
 import './landing.css'
-// images
-import logo from '../asset/images/logo.png'
-import image1 from '../asset/images/image1.jpg'
-// Icons
-import areaIcon from '../asset/icons/area.svg'
-import buildingIcon from '../asset/icons/building.svg'
-import locationIcon from '../asset/icons/location.svg'
+
 import HeroSection from '../components/pages/HeroSection'
 import About from '../components/pages/About'
 import Amenities from '../components/pages/Amenities'
@@ -28,8 +22,8 @@ function LandingPage() {
             distanceRef={distanceRef}
             contactRef={contactRef}
             />
-            <HeroSection />
-            <About ref={aboutRef}/>
+            <HeroSection contactRef={contactRef}/>
+            <About ref={aboutRef} contactRef={contactRef} />
             <Amenities ref={amenityRef}/>
             <Distances ref={distanceRef}/>
             <Contact ref={contactRef}/>

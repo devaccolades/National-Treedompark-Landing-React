@@ -3,9 +3,11 @@ import React, { forwardRef } from 'react';
 import aboutImage from '../../asset/images/about.jpg';
 
 const About = forwardRef((props, ref) => {
+    const { contactRef } = props;
+
     return (
         <section ref={ref} className="about-containers grid grid-cols-1 lg:grid-cols-2 ">
-            <div className='bg-cover bg-center h-[600px] lg:h-full' style={{ backgroundImage: `url(${aboutImage})`}}/>
+            <div className='bg-cover bg-center h-[600px] lg:h-full' style={{ backgroundImage: `url(${aboutImage})` }} />
             <div className="about-wrapper p-[30px] lg:p-[60px] flex flex-col gap-[10px] justify-center">
                 <p className="text-[#d90429] font-quicksand-semiBold text-[18px] lg:text-[22px] underline">Next-Gen Luxury</p>
                 <h1 className="about-heading font-quicksand-bold text-[26px] md:text-[36px] lg:text-[40px] leading-[36px] md:leading-[46px] lg:leading-[56px] lg:w-[600px]">
@@ -32,7 +34,9 @@ const About = forwardRef((props, ref) => {
                     <p>Sq.ft : 1180 - 1312 sq.ft</p>
                     <p>Location : Vyttila, Kochi</p>
                 </div>
-                <button className="bg-[#d90429] w-full lg:w-[80%] text-white font-quicksand-semiBold text-[16px] py-[10px] px-[20px] rounded-[10px]">
+                <button className="bg-[#d90429] w-full lg:w-[80%] text-white font-quicksand-semiBold text-[16px] py-[10px] px-[20px] rounded-[10px]"
+                    onClick={() => contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                >
                     Contact Now
                 </button>
             </div>

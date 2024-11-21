@@ -11,11 +11,11 @@ const details = [
     { icon: areaIcon, title: "1180 - 1312 sq.ft" },
     { icon: locationIcon, title: "Vyttila, Kochi" },
 ]
-function HeroSection() {
+function HeroSection({contactRef}) {
     return (
         <>
             <section className='landing relative bg-center bg-contain bg-no-repeat lg:-mt-[80px]'>
-                <img src={Image} alt="" className='object-cover z-0 hidden md:block' />
+                <img src={Image} alt="" className='object-cover w-full z-0 hidden md:block' />
                 <img src={mobImage} alt="" className='block md:hidden w-full' />
                 <div className='hidden lg:block landing-card-container absolute bottom-[4%] w-full'>
                     <div className='box-container w-full md:w-[600px] rounded-[20px]  mx-auto bg-white flex flex-col p-[20px] gap-[20px]'>
@@ -26,7 +26,9 @@ function HeroSection() {
                                     <p className='font-inter-regular text-[14px] md:font-[16px]'>{item?.title}</p>
                                 </div>
                             ))}
-                            <button className='bg-[#2b2d42] text-white md:col-span-3 font-quicksand-semiBold text-[14px] md:text-[16px] py-[10px] px-[20px] rounded-[10px]'>
+                            <button className='bg-[#2b2d42] text-white md:col-span-3 font-quicksand-semiBold text-[14px] md:text-[16px] py-[10px] px-[20px] rounded-[10px]'
+                            onClick={() => contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                            >
                                 Download Brochure
                             </button>
                         </div>
