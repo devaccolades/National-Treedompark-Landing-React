@@ -1,4 +1,5 @@
 import React, { forwardRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Icons
 import phoneIcon from '../../asset/icons/phone.png';
@@ -8,10 +9,11 @@ import mapIcon from '../../asset/icons/map-and-location.png';
 const data = [
     { icon: phoneIcon, title1: "Call Now", title2: "+91 98475 33355", href: "tel:+91 98475 33355" },
     { icon: emailIcon, title1: "Email Us", title2: "marketingkochi@nationalbuilders.in", href: "mailto:marketingkochi@nationalbuilders.in" },
-    { icon: mapIcon, title1: "Visit Us", title2: "National Treedom park,Vyttila, Kochi", href: "https://www.google.com/maps?ll=9.970803,76.328979&z=11&t=m&hl=en-US&gl=US&mapclient=embed&cid=7264730013772661357" },
+    { icon: mapIcon, title1: "Visit Us", title2: "National Treedom park, Vyttila, Kochi", href: "https://www.google.com/maps?ll=9.970803,76.328979&z=11&t=m&hl=en-US&gl=US&mapclient=embed&cid=7264730013772661357" },
 ];
 
 const Contact = forwardRef((props, ref) => {
+    const navigate = useNavigate(); // Hook to navigate programmatically
     const [form, setForm] = useState({ name: "", phone: "" });
     const [errors, setErrors] = useState({ name: "", phone: "" });
     const [loading, setLoading] = useState(false);
@@ -49,7 +51,7 @@ const Contact = forwardRef((props, ref) => {
                 setLoading(false);
     
                 if (result.result === 'success') {
-                    alert('Form submitted successfully!');
+                    navigate('/thankyou'); // Navigate to /thankyou upon success
                     setForm({ name: "", phone: "" });
                 } else {
                     alert(result.message || 'Something went wrong. Please try again.');

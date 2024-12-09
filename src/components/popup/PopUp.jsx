@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const PopupForm = () => {
+const PopUp = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [form, setForm] = useState({ name: "", phone: "" });
     const [errors, setErrors] = useState({ name: "", phone: "" });
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate(); // Hook for navigation
 
     // Check if the popup has been closed before
     useEffect(() => {
@@ -46,10 +48,9 @@ const PopupForm = () => {
                 setLoading(false);
 
                 if (result.result === 'success') {
-                    alert('Form submitted successfully!');
                     setForm({ name: "", phone: "" });
                     setIsOpen(false);
-                    localStorage.setItem('popupClosed', true); // Set the popup as closed
+                    navigate('/thankyou'); 
                 } else {
                     alert(result.message || 'Something went wrong. Please try again.');
                 }
@@ -139,4 +140,4 @@ const PopupForm = () => {
     );
 };
 
-export default PopupForm;
+export default PopUp;
