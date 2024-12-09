@@ -32,7 +32,7 @@ export function Headder({ aboutRef, amenityRef, distanceRef, contactRef }) {
                             className='font-inter-medium text-[14px] md:text-[16px] cursor-pointer bg-[#d90429] py-[8px] px-[16px] rounded-[10px] text-white'
                             onClick={() => contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })}
                         >
-                            Get in touch
+                            Enquire Now
                         </button>
                     </li>
                 </ul>

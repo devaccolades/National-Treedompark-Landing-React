@@ -6,7 +6,7 @@ import emailIcon from '../../asset/icons/chat.png';
 import mapIcon from '../../asset/icons/map-and-location.png';
 
 const data = [
-    { icon: phoneIcon, title1: "Call Now", title2: "+91 98477 17771", href: "tel:+91 98477 17771" },
+    { icon: phoneIcon, title1: "Call Now", title2: "+91 98475 33355", href: "tel:+91 98475 33355" },
     { icon: emailIcon, title1: "Email Us", title2: "marketingkochi@nationalbuilders.in", href: "mailto:marketingkochi@nationalbuilders.in" },
     { icon: mapIcon, title1: "Visit Us", title2: "National Treedom park,Vyttila, Kochi", href: "https://www.google.com/maps?ll=9.970803,76.328979&z=11&t=m&hl=en-US&gl=US&mapclient=embed&cid=7264730013772661357" },
 ];
@@ -116,7 +116,7 @@ const Contact = forwardRef((props, ref) => {
                                 Number <span className="text-[#d90429]">*</span>
                             </label>
                             <input
-                                type="number"
+                                type="text"
                                 id="phone"
                                 name="phone"
                                 value={form.phone}
