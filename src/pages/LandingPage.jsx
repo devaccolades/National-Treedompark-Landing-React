@@ -36,10 +36,10 @@ function LandingPage() {
             <Footer />
             {/* Floating icons */}
             <div className="fixed bottom-[40px] px-[20px] flex flex-row w-full justify-between">
-                <a href="tel:+919847544222" className='bg-[#d90429] p-[10px] rounded-full'>
+                <a href="tel:+919847717771" className='bg-[#d90429] p-[10px] rounded-full'>
                     <img src={phoneIcon} alt="Phone Icon" className="w-[40px] h-[40px]" />
                 </a>
-                <a href="https://api.whatsapp.com/send/?phone=919847544222&text&type=phone_number&app_absent=0" className='bg-[#25D366] p-[10px] rounded-full'>
+                <a href="https://api.whatsapp.com/send/?phone=919847717771&text&type=phone_number&app_absent=0" className='bg-[#25D366] p-[10px] rounded-full'>
                     <img src={whatsappIcon} alt="WhatsApp Icon" className="w-[40px] h-[40px]" />
                 </a>
             </div>
